@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ticker.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/ticker_dot.png" type="Texture" id=2]
+[ext_resource path="res://clock.tscn" type="PackedScene" id=3]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
+margin_right = 1280.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.243137, 0.317647, 0.92549, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer"]
+margin_top = 240.0
+margin_right = 1280.0
+margin_bottom = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.294118, 0.811765, 0.219608, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 480.0
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_vertical = 3
+
+[node name="Ticker" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 638.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+item_strings = PoolStringArray( "Deadly storms carve destructive path", "Plantiff\'s atty. says order will protect", "A Memphis Theater Company" )
+separator_texture = ExtResource( 2 )
+
+[node name="Clock" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 642.0
+margin_right = 1280.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
